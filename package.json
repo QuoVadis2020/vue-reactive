@@ -1,0 +1,18 @@
+{
+  "name": "vue-reactive",
+  "version": "0.0.1",
+  "description": "响应式原理",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "响应式原理"
+  ],
+  "author": "mirror",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
