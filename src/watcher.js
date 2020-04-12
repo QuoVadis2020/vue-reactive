@@ -1,8 +1,13 @@
 import { pushTarget, popTarget } from './dep';
 
 export default class Watcher {
-  constructor(getter) {
+  constructor(getter, options = {}) {
+    const { watch, callback } = options;
+
     this.getter = getter;
+    this.watch = watch;
+    this.callback = callback;
+
     this.get();
   }
 
@@ -14,6 +19,11 @@ export default class Watcher {
   }
 
   update() {
+    if (this.watch) {
+      const oldValue = this.value;
+      this.get();
+      return this.callback(oldValue, this.value);
+    }
     this.get();
   }
 }
